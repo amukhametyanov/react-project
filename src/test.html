@@ -1,0 +1,1718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <link rel="icon" href="images/logo1.png" type="image/x-icon">
+  <title>Artur - Web Developer Portfolio</title>
+  <meta name="description" content="A portfolio website showcasing the skills, work experience, and projects of Your Name, a web developer.">
+    <!-- <meta name="keywords" content="team sports, cricket, cricket shop, hockey, hockey shop, basketball, basketball shorts, basketball store, soccer, soccer store, soccer shop, football, football gear, football stores, football shop, rugby, rugby store, rugby shop, baseball, baseball store, baseball gear, canadian baseball stores, baseball shop, baseball goods store, lacrosse, lacrosse store, volleyball, volleyball store, volleyball shop, ringette, ringette store, slo pitch">
+    <meta property="og:title" content="Team Sports Equipment & Clothing Online Store - Team Town" />
+    <meta property="og:image" content="images/team-town-sports-social-fb-bg.jpg" />
+    <meta property="og:url" content="https://www.teamtownsports.com" />
+    <meta name="twitter:card" content="images/team-town-sports-social-twitter-bg.jpg">
+    <meta property="og:description" content="Team Town is Canada’s Premier Destination for Team Sports Equipment & Clothing. From Cricket, Hockey, Football, Basketball, Soccer, and All Sports in Between." />
+    <meta property="og:site_name" content="Team Sports Equipment & Clothing Online Store - Team Town">
+    <meta name="twitter:image:alt" content="Team Sports Equipment & Clothing Online Store"> -->
+
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/c7b9d56ef9.js" crossorigin="anonymous"></script>
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  
+
+
+  <!-- Custom CSS and local fonts -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/fonts.css">
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+</head>
+<body>
+    <!-- related to the whole page CSS and Javascript -->
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            /* font-family: 'Roboto', sans-serif; */
+            font-family: 'Montserrat', sans-serif;
+            background-image: url("../images/tile 3.png");
+            color: #f5f5f5;
+            line-height: 1.6;
+
+        }
+        
+        a {
+            color: #f5f5f5;
+            text-decoration: none;
+        }
+        
+        ul {
+            list-style-type: none;
+            /* bootstrap's override of paddings */
+            padding-left: 0;
+        }
+
+        section:not(.hero) {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-name {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between; /* Add this line */
+            margin-bottom: 25px;
+        }
+        .section-name > h3 {
+            font-family: 'Graduate', cursive;
+            font-size: 2rem;
+            margin-right: 10px;
+        }
+        .section-name > img {
+            width: 100px;
+            height: auto;
+            float: right; /* Add this line */
+        }
+
+        @media (max-width: 576px) {
+            .section-name > h3 {
+            font-size: 23px;
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // animate category names, when user scrolls to them
+            var observer = new IntersectionObserver(function(entries) {
+            // Loop over the entries
+            entries.forEach(function(entry) {
+                // If the element is in the viewport
+                if (entry.isIntersecting) {
+                // Add the showUp class
+                // entry.target.classList.add('showsUp');
+                // Add the animate__bounceInRight class
+                entry.target.classList.add('animate__bounceInRight');
+
+                // Select the sibling span element
+                var textElement = entry.target.parentElement.previousElementSibling;
+                // Add the squeeze-animation class
+                textElement.classList.add('squeeze-animation');
+
+                
+
+                // Unobserve the element
+                observer.unobserve(entry.target);
+                }
+            });
+            });
+        }); // end of DOMContentLoaded
+    </script>
+    <!-- related to the whole page CSS and Javascript -->
+
+
+  <!-- Navigation *New Component* -->
+  <style>
+    /* Navigation */
+  header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #212121;
+    position: relative;
+    font-family: 'Graduate', cursive;
+  }
+
+  nav .desktop-menu {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+  }
+  
+  nav ul {
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-left: 1rem;
+  }
+  
+  nav img {
+    width: 2rem;
+    cursor: pointer;
+  }
+
+  /* Hamburger */
+  .mobile-menu-button {
+    display: none;
+    position: relative;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .mobile-menu-button .bar {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transition: all 0.3s;
+  }
+  
+  .mobile-menu-button .bar:nth-child(1) {
+    top: 0;
+  }
+  
+  .mobile-menu-button .bar:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .mobile-menu-button .bar:nth-child(3) {
+    bottom: 0;
+  }
+  
+  .mobile-menu-button.active .bar:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+  }
+  
+  .mobile-menu-button.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .mobile-menu-button.active .bar:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+  }
+
+  /* media queries for nav */
+  @media (min-width: 768px) {
+    nav ul li a:hover {
+      color: #a6a6a6;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    /* Navigation */
+    nav ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+      background-color: #212121;
+      max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    }
+  
+   /* Make hamburger visible on mobile */
+  
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+    }
+    nav ul li > a {
+        display: block;
+        padding: 0.5rem 0;
+    }
+    nav ul.show li a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    .mobile-menu-button {
+        display: block;
+    }
+    
+  }
+  </style>
+  <header class="sticky-header">
+    <nav class="top-nav">
+      <img src="images/logo1.png" alt="Logo" />
+      <div class="desktop-menu">
+        <ul>
+            <li><a href="/">Resume</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#about-me">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+      </div>
+      
+      <!-- <img src="images/hamburger_icon.png" alt="Mobile menu button" class="hamburger" /> -->
+      <button class="mobile-menu-button" id="mobile-menu-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+    </nav>
+  </header>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+// menu related code --start ////////////////////////////////////////////////////////////////
+const mobileMenuButton = document.querySelector('.mobile-menu-button');
+const navMenu = document.querySelector('nav ul');
+const header = document.querySelector('.sticky-header');
+
+// dynamically calculates the submenu's height
+function setMenuHeight() {
+  if (navMenu.classList.contains('show')) {
+    navMenu.style.maxHeight = navMenu.scrollHeight + 'px';
+  } else {
+    navMenu.style.maxHeight = '0';
+  }
+}
+
+function closeMenu() {
+  mobileMenuButton.classList.remove('active');
+  navMenu.classList.remove('show');
+  setMenuHeight();
+  // Remove the document-level click event listener when the menu is closed
+  document.removeEventListener('click', documentClickListener);
+}
+
+function documentClickListener(event) {
+  if (!header.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+    closeMenu();
+  }
+}
+
+mobileMenuButton.addEventListener('click', function () {
+  mobileMenuButton.classList.toggle('active');
+  navMenu.classList.toggle('show');
+  setMenuHeight();
+  // Add the document-level click event listener when the menu is expanded
+  if (navMenu.classList.contains('show')) {
+    document.addEventListener('click', documentClickListener);
+  } else {
+    document.removeEventListener('click', documentClickListener);
+  }
+});
+
+// Set initial max-height based on the current state of the menu
+setMenuHeight();
+
+// to close mobile menu when user chooses any option from menu
+// Get all menu items
+  const menuItems = document.querySelectorAll('nav ul li a');
+
+  // Add click event to each menu item
+  menuItems.forEach((menuItem) => {
+    menuItem.addEventListener('click', function () {
+      // Close the mobile menu when any menu item is clicked
+      if (navMenu.classList.contains('show')) {
+        closeMenu();
+      }
+    });
+  });
+}); // end of DOMContentLoaded
+  </script>
+   <!-- Navigation *New Component* -->
+
+  <!-- Hero *New Component* -->
+  <style>
+      /* Hero */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+    height: calc(100vh - 65px); /* Add this line to make the hero full screen height */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/tile 3.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  .hero-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+  .hero-photo {
+    max-width: 100px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+  }
+  
+  .hero h2 {
+    font-family: 'Graduate', cursive;
+    border: 5px solid;
+    font-size: 3rem;
+    text-align: center;
+    line-height: 1;
+    padding: 0 15px;
+    letter-spacing: 2px;
+
+    /* testing */
+    
+    display: inline;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .hero h1.prof-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-align: center;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.6);
+    text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .hero .cta {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+    /* border: 2px solid #f5f5f5; */
+    background: rgba(0,0,0, 0.4);
+    letter-spacing: 1px;
+    font-weight: 600;
+    /* transition: background-color 0.3s ease, color 0.3s ease; */
+
+    /* settings from video */
+    /* --color: #fff; */
+    border: 2px solid #f5f5f5;
+    position:relative;
+    isolation: isolate;
+  }
+  .hero .cta::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    background-color: #f5f5f5;
+    color: #212121;
+    inset: 0;
+
+    scale: 0 1;
+    transform-origin: right;
+    transition: scale 450ms;
+  }
+
+  .hero .cta:hover::after,
+  .hero .cta:focus-visible::after {
+    transform-origin: left;
+    scale: 1 1;
+    
+  }
+  
+  .hero .cta:hover {
+    /* background-color: #f5f5f5; */
+    color: #212121;
+  }
+
+  .learn-more {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 5px 0 5px;
+    width: 100%;
+    background-image: linear-gradient(to top, #121212, transparent);
+  }
+  
+  .learn-more-link {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s;
+    opacity: .7;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-align: center;
+    line-height: 1;
+  }
+  
+  .learn-more-link:hover {
+    color: #ccc;
+  }
+  
+  .fa-chevron-down {
+    opacity: .7;
+    margin-top: 5px;
+  }
+
+  /* media queries for header */
+  @media (max-width: 576px) {
+    .hero h1 {
+        font-size: 2.7rem;
+      }
+      .hero h2 {
+        font-size: 4rem;
+      }
+      .hero h2 > span {
+        font-size: 26px;
+        display: block;
+        margin-top: 6px;
+      }
+  }
+  </style>
+  <section class="hero">
+    <div class="hero-content">
+      
+          <img src="images/astronaut laptop1.png" alt="Dev Photo" class="hero-photo" />
+          <h2 class="p-2">Artur <span>Mukhametyanov</span></h2>
+          <h1 class="prof-title">Web Developer</h1>
+          <a href="/portfolio" class="cta">Resume <i class="fa-solid fa-download"></i></a>
+     
+      
+    </div>
+    
+
+    <div class="learn-more">
+      <a href="#skills" class="learn-more-link">
+        Learn more about what I do
+        <br>
+        <i class="fas fa-chevron-down"></i>
+      </a>
+    
+    </div>
+  </section>
+  <!-- Hero *New Component* -->
+
+  <!-- Skills *New Component* -->
+  <style>
+    /* Skills */
+.skills {
+  padding: 4rem 2rem;
+  /* background-color: #121212; */
+  background-color: rgba(18, 18, 18, .95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+/* this leaves 65px on top reserved for sticky nav menu, when page uses smooth scroll */
+
+#skills, #about-me, #contact {
+  display: block;
+  height: 95px; /* The height of your sticky nav bar */
+  margin-top: -95px; /* The negative value of the height */
+  visibility: hidden;
+}
+
+/* start aimation for section name */
+@keyframes deformation {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0.7);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+
+.skills-heading {
+  position: static;
+  display: inline-block;
+  overflow: hidden;
+  width: 50%;
+}
+
+.squeeze-animation {
+  display: inline-block;
+  animation: deformation .4s forwards;
+  animation-delay: .4s;
+}
+
+/* end of animation for section title */
+
+/* animation for the stroke of the SVG path to make it look like the outline of the circle is growing */
+@keyframes grow-100 {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes grow-95 {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 5;
+  }
+}
+@keyframes grow-90 {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 10;
+  }
+}
+@keyframes grow-85 {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 15;
+  }
+}
+@keyframes grow-80 {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 20;
+  }
+}
+@keyframes grow-75 {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 25;
+  }
+}
+
+
+.circle {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  
+}
+.circle-100 {
+  animation: grow-100 2s forwards;
+}
+.circle-95 {
+  animation: grow-95 2s forwards;
+}
+.circle-90 {
+  animation: grow-90 2s forwards;
+}
+.circle-85 {
+  animation: grow-85 2s forwards;
+}
+.circle-80 {
+  animation: grow-80 2s forwards;
+}
+.circle-75 {
+  animation: grow-75 2s forwards;
+}
+/* end of animation for the stroke of the SVG path to make it look like the outline of the circle is growing */
+
+
+.skills h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.skills ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  .skills .skill-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #333;
+    border: 1px solid #444;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    height: 100%;
+  }
+
+.skills .skill-name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.skills .skill-percentage {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #333;
+  overflow: hidden;
+}
+
+
+
+.skills .skill-percentage span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+
+.circular-chart {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .circle-bg {
+    opacity: 0.1;
+  }
+  
+  .circle {
+    transition: stroke-dashoffset 0.35s;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+  }
+
+
+  /* switching tabs for skills section */
+  .tabs {
+    position: relative;
+    display: flex;
+    /* justify-content: center; */
+    /* border-bottom: 1px solid hsl(0 0% 30%); */
+    width: fit-content;
+    }
+
+    .tabs::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 4px;
+      scale: var(--_width, 0.333) 1;
+      translate: var(--_left, 0) 0;
+      transform-origin: left;
+      transition: scale 200ms, translate 200ms;
+      background: #fff;
+    }
+   
+    .tab {
+      padding: 1rem 2rem;
+      cursor: pointer;
+      min-width: 0% !important;
+      text-align: center;
+      vertical-align: bottom;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      border: none;
+      /* margin-right: 10px; */
+      color: #a6a6a6;
+      background: transparent;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .tab.active {
+      color: #fff;
+    }
+    
+    .content {
+      border-top: 1px solid hsl(0 0% 30%);
+    }
+    .tab:focus {
+      outline: none !important;
+    }
+    
+    .tabcontent {
+    padding: 20px 0;
+    border-top: none;
+    display: none;
+    }
+    
+    .tabcontent.active {
+    display: block;
+    animation: fadein 0.5s;
+    }
+    
+    
+    @keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+    }
+    
+    /* @media (max-width: 1023.8px) {
+      .tabs,
+      .content {
+          margin: 0 -20px;
+      }
+    } */
+    @media (min-width: 576px) {
+      .skills .skill-name {
+        margin-right: 10px;
+        font-size: 14px;
+        flex: 1;
+      }
+      
+    }
+    @media (max-width: 576px) {
+      .tabs .tab {
+          min-width: 95px;
+          font-size: 12px;
+      }
+      .tab {
+        padding: 15px;
+      }
+      
+      .tabs > p {
+          font-size: 10px;
+      }
+      .skills .skill-name {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+    }
+
+
+  /* glowing effect around cards */
+  .skills li {
+    position: relative;
+    z-index: 1;
+    /* animation: glowing 2s infinite; */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.6), 0 0 10px rgba(255, 0, 255, 0.6);
+  }
+
+
+   /* Media Queries for skills */
+   @media (max-width: 1024px) {
+    .skills ul {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .skills {
+      padding: 2rem 1.5rem;
+    }
+    .skills ul {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 576px) {
+    .skills .skill-card {
+        flex-direction: column;
+    }
+  }
+  </style>
+  <section class="skills">
+    <div id="skills"></div>
+    <div class="section-name">
+      <h3 class="skills-heading"><span>Skills</span> <span class="for-icon"><i class="fa-sharp fa-solid fa-screwdriver-wrench animate__animated"></i></span></h3>
+      <img src="images/about me astronaut 1.png" alt="Dev Skills" class="skills-avatar" />
+    </div>
+    
+    <div class="tabs flex-wrap">
+      <button class="tab active" onclick="changeTab(0, this)">Front-End</button>
+      <button class="tab" onclick="changeTab(1, this)">Back-End</button>
+      <button class="tab" onclick="changeTab(2, this)">Full-Stack</button>
+    </div>
+
+    <div class="content">
+      <div id="frontEnd" class="tabcontent active">
+            <ul>
+              <li>
+                  <div class="skill-card">
+                          <span class="skill-name">HTML, CSS</span>
+                          <div class="skill-percentage">
+                            <svg viewBox="0 0 36 36" class="circular-chart">
+                                <path class="circle-bg"
+                                    d="M18 2.0845
+                                        a 15.9155 15.9155 0 0 1 0 31.831
+                                        a 15.9155 15.9155 0 0 1 0 -31.831"
+                                    fill="none"
+                                    stroke="#333"
+                                    stroke-width="2"
+                                    stroke-dasharray="100, 100"
+                                ></path>
+                                <path class="circle circle-100"
+                                    d="M18 2.0845
+                                        a 15.9155 15.9155 0 0 1 0 31.831
+                                        a 15.9155 15.9155 0 0 1 0 -31.831"
+                                    fill="none"
+                                    stroke="#fff"
+                                    stroke-width="2"
+                                    stroke-dasharray="100, 100" 
+                                    stroke-linecap="round"
+                                ></path>
+                                <text x="18" y="19" text-anchor="middle" fill="#fff" font-size="11px" dy=".3em">100%</text>
+                            </svg>
+                          </div>
+                  </div>
+                  
+                </li>
+      
+                <li>
+                  <div class="skill-card">
+                          <span class="skill-name">JavaScript (ES6+)</span>
+                          <div class="skill-percentage">
+                          
+                          </div>
+                  </div>
+                  
+                </li>
+      
+                <li>
+                  <div class="skill-card">
+                          <span class="skill-name">React.js and React Hooks</span>
+                          <div class="skill-percentage">
+                          
+                          </div>
+                  </div>
+                
+                </li>
+      
+            
+            </ul>
+      </div>
+      <div id="backEnd" class="tabcontent">
+              <ul>
+                <li>
+                    <div class="skill-card">
+                            <span class="skill-name">Laravel</span>
+                            <div class="skill-percentage">
+                            <svg viewBox="0 0 36 36" class="circular-chart">
+                                <path class="circle-bg"
+                                    d="M18 2.0845
+                                        a 15.9155 15.9155 0 0 1 0 31.831
+                                        a 15.9155 15.9155 0 0 1 0 -31.831"
+                                    fill="none"
+                                    stroke="#333"
+                                    stroke-width="2"
+                                    stroke-dasharray="100, 100"
+                                ></path>
+                                <path class="circle circle-90"
+                                    d="M18 2.0845
+                                        a 15.9155 15.9155 0 0 1 0 31.831
+                                        a 15.9155 15.9155 0 0 1 0 -31.831"
+                                    fill="none"
+                                    stroke="#fff"
+                                    stroke-width="2"
+                                    stroke-dasharray="90, 100" 
+                                    stroke-linecap="round"
+                                ></path>
+                                <text x="18" y="19" text-anchor="middle" fill="#fff" font-size="11px" dy=".3em">90%</text>
+                            </svg>
+                            </div>
+                    </div>
+                    
+                  </li>
+        
+                  <li>
+                    <div class="skill-card">
+                            <span class="skill-name">Composer</span>
+                            <div class="skill-percentage">
+                            
+                            </div>
+                    </div>
+                    
+                  </li>
+        
+                  <li>
+                    <div class="skill-card">
+                            <span class="skill-name">Node.js with Express.js</span>
+                            <div class="skill-percentage">
+                            
+                            </div>
+                    </div>
+                  
+                  </li>
+        
+                  
+              
+              </ul>
+      </div>
+      <div id="fullStack" class="tabcontent">
+              <ul>
+                <li>
+                    <div class="skill-card">
+                            <span class="skill-name">C</span>
+                            <div class="skill-percentage">
+                            <svg viewBox="0 0 36 36" class="circular-chart">
+                                <path class="circle-bg"
+                                    d="M18 2.0845
+                                        a 15.9155 15.9155 0 0 1 0 31.831
+                                        a 15.9155 15.9155 0 0 1 0 -31.831"
+                                    fill="none"
+                                    stroke="#333"
+                                    stroke-width="2"
+                                    stroke-dasharray="100, 100"
+                                ></path>
+                                <path class="circle circle-90"
+                                    d="M18 2.0845
+                                        a 15.9155 15.9155 0 0 1 0 31.831
+                                        a 15.9155 15.9155 0 0 1 0 -31.831"
+                                    fill="none"
+                                    stroke="#fff"
+                                    stroke-width="2"
+                                    stroke-dasharray="90, 100" 
+                                    stroke-linecap="round"
+                                ></path>
+                                <text x="18" y="19" text-anchor="middle" fill="#fff" font-size="11px" dy=".3em">90%</text>
+                            </svg>
+                            </div>
+                    </div>
+                    
+                  </li>
+        
+                  <li>
+                    <div class="skill-card">
+                            <span class="skill-name">C++</span>
+                            <div class="skill-percentage">
+                            
+                            </div>
+                    </div>
+                    
+                  </li>
+        
+                  <li>
+                    <div class="skill-card">
+                            <span class="skill-name">C#</span>
+                            <div class="skill-percentage">
+                           
+                            </div>
+                    </div>
+                  
+                  </li>
+        
+                  
+              
+              </ul>
+      </div>
+    </div>
+
+    
+  </section>
+
+
+  <script>
+    // code that switches between pressed tabs and their content
+    const tabs = document.getElementsByClassName("tabcontent");
+    const tabButtons = document.getElementsByClassName("tab");
+    
+    function changeTab(n, el) {
+      // first get the current tab
+      let oldTab = document.querySelector('.tab.active');
+
+        for(var i = 0; i < tabs.length; i++) {
+            tabs[i].classList.remove("active");
+            tabButtons[i].classList.remove("active");
+        }
+        tabs[n].classList.add("active");
+        el.classList.add("active");
+
+        
+        moveIndicator(oldTab, el);
+    }
+
+
+    // move underline indicator
+    function moveIndicator(oldTab, newTab) {
+      let tabsContainer = document.querySelector('.tabs'); // Select the container
+      const newTabPosition = oldTab.compareDocumentPosition(newTab);
+      
+      const newTabWidth = newTab.offsetWidth / tabsContainer.offsetWidth;
+      let transitionWidth;
+
+      // if the new tab is to the right
+      if(newTabPosition === 4) {
+        transitionWidth = newTab.offsetLeft + newTab.offsetWidth - oldTab.offsetLeft;
+      } else {
+        // if the tab is to the left
+        transitionWidth = oldTab.offsetLeft + oldTab.offsetWidth - newTab.offsetLeft;
+        tabsContainer.style.setProperty('--_left', newTab.offsetLeft + "px");
+      }
+      
+      
+      tabsContainer.style.setProperty('--_width', transitionWidth / tabsContainer.offsetWidth);
+
+      setTimeout(() => {
+        tabsContainer.style.setProperty('--_left', newTab.offsetLeft + "px");
+        tabsContainer.style.setProperty('--_width', newTabWidth);
+      }, 240);
+    }
+
+    // Update the indicator when the window is resized
+    function updateIndicator(newTab) {
+      let tabsContainer = document.querySelector('.tabs'); // Select the container
+      const newTabWidth = newTab.offsetWidth / tabsContainer.offsetWidth;
+      tabsContainer.style.setProperty('--_left', newTab.offsetLeft + "px");
+      tabsContainer.style.setProperty('--_width', newTabWidth);
+    }
+
+    // make sure that 'resize' fires only if the current width has crossed the 576px threshold in either direction
+    let previousWidth = window.innerWidth;
+
+    window.addEventListener('resize', () => {
+      const currentWidth = window.innerWidth;
+
+      // Check if the window width has crossed the 576px threshold
+      if ((previousWidth < 576 && currentWidth >= 576) || (previousWidth >= 576 && currentWidth < 576)) {
+        const activeTab = document.querySelector('.tab.active');
+        if (activeTab) {
+          updateIndicator(activeTab);
+        }
+        console.log('resize fired');
+      }
+
+      previousWidth = currentWidth; // Update the previous width for the next resize event
+    });
+   // code that switches between pressed tabs and their content
+  </script>
+  <!-- Skills *New Component* -->
+
+  <!-- About *New Component* -->
+  <style>
+    /* About section */
+  .about {
+    padding: 8rem 2rem;
+    background: linear-gradient(rgba(30,144,255,0.9), rgba(138,43,226,.7));
+  }
+  
+  .about-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+  }
+  
+  .photo-container {
+    flex: 0 0 auto;
+    width: 150px;
+    height: 150px;
+    margin-right: 30px;
+  }
+  
+  .profile-photo {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4), 0 3px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 50%;
+  }
+  
+  .comic-cloud {
+    flex: 1;
+    background-color: #262626;
+  border-radius: 10px;
+  position: relative;
+  /* font-style: italic; */
+  }
+  .comic-cloud::before {
+    content: '';
+    position: absolute;
+    bottom: -24px;
+    left: 6px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 31px solid #262626;
+    transform: rotate(24deg);
+  }
+
+  .aligned-image {
+    width: 110px;
+    height: auto;
+    position: absolute;
+    left: -30px;
+    bottom: -120px;
+    transform: scaleX(-1);
+  }
+
+  
+  .about-text {
+    
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .about-text h2 {
+    font-family: 'Graduate', cursive;
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid;
+  }
+
+  .about-text p {
+    letter-spacing: 1.2px;
+    text-indent: 1em;
+  }
+ 
+
+  /* animation for austronauft */
+  @keyframes levitate-and-flip {
+    0% {
+      transform: translateY(0) scaleX(-1);
+    }
+    25% {
+      transform: translateY(10px) scaleX(-1); 
+    }
+    50% {
+      transform: translateY(0) scaleX(-1);
+    }
+    75% {
+      transform: translateY(15px) scaleX(-1); 
+    }
+    100% {
+      transform: translateY(0) scaleX(-1);
+    }
+  }
+  
+  .aligned-image {
+    animation: levitate-and-flip 3s infinite ease-in-out;
+  }
+  
+  /* Responsive Design */
+  @media (min-width: 768px) {
+    .comic-cloud {
+      padding: 40px;
+    }
+  }
+  @media (max-width: 767px) {
+    .about {
+      padding: 6rem 1.5rem;
+    }
+    .comic-cloud {
+      padding: 20px;
+    }
+  }
+  @media (max-width: 576px) {
+    .photo-container {
+      margin: 0 auto 30px;
+    }
+  
+    .about-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    .about-text p {
+      font-size: .85rem;
+    }
+  }
+  </style>
+  <section class="about">
+    <div id="about-me"></div>
+    <div class="about-container">
+      <div class="photo-container">
+        
+        <img src="images/profile-photo.jpg" alt="Dev Photo" class="profile-photo" />
+      </div>
+      <div class="comic-cloud">
+        
+        <div class="about-text">
+          <h2>About Me <i class="fa-sharp fa-solid fa-comment-dots"></i></h2>
+
+            <p>Hello and welcome to my digital abode! Now, you might be asking yourself, "Who is this coding maestro?" Well, sit tight, because you're in for a ride through the riveting world of web development, as narrated by yours truly.</p>
+            <br>
+            <p>First off, let's clear something up: I speak more languages than just English. I'm fluent in HTML, CSS, JavaScript, and even PHP, Python, Angular, and React. That's right, I'm the polyglot of programming, the Shakespeare of script, the — okay, I'll stop there.</p>
+            <br>
+            <p>You know how some people optimize their coffee intake for maximum productivity? Well, I optimize websites. I've compressed more images than you've taken selfies, and let's just say lazy loading isn't just my Sunday morning routine. My coding finesse has even boosted sales by 15% for my current gig. Not too shabby, right?</p>
+            <br>
+            <p>But hold on, there's more! Ever tried navigating a website that's about as accessible as a labyrinth guarded by a Minotaur? Not on my watch. I'm all about making the web a friendlier place, one alt-text at a time. And SEO? Let's just say if Google were a classroom, my websites would be the teacher's pets.</p>
+            <br>
+            <p>When I'm not busy being a remote warrior—mastering the art of coding in pajamas—I dabble in the fine arts of project management. Asana, Jira, Slack; you name it, I've "task-managed" it. Oh, did I mention that I thrive in Agile environments? Yep, I'm all about those sprints, and not just when I'm late for a meeting!</p>
+            <br>
+            <p>So, buckle up, surf through my portfolio, or drop me a line. Let's turn those dream projects into digital realities, one line of code at a time!</p>
+        </div>
+
+        <img src="images/astronauft skills 1.png" alt="Your Image Description" class="aligned-image" />
+      </div>
+
+      
+     
+    </div>
+  </section>
+  <!-- About *New Component* -->
+
+  <!-- Get in Touch *New Component* -->
+  <style>
+    /* Contact section */
+  .get-in-touch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+    background-color: rgba(28, 28, 28, .9);
+    color: #ccc;
+  }
+  
+  .contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .contact-image {
+    flex: 1;
+    text-align: end;
+  }
+  .contact-image > img {
+    width: 100%;
+    max-width: 370px;
+    margin-right: 20px;
+  }
+  
+  .contact-form-container {
+    flex: 1;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  .contact-form textarea {
+    height: 200px;
+    resize: none;
+  }
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .form-group {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .form-group:last-child {
+    margin-right: 0;
+  }
+  
+  
+  
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  
+  .contact-form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #ccc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    outline: none;
+    align-self: flex-start;
+    min-width: 145px;
+  }
+  
+  .contact-form button:hover {
+    background-color: #444;
+  }
+
+  @media (min-width: 768px) {
+    .section-name > .get-in-touch-avatar {
+      display: none;
+    }
+  }
+  @media (max-width: 1200px) {
+    .contact-image {
+      max-width: calc(100% / 3); /* Limit the width to 1/3 */
+    }
+    
+    .contact-form-container {
+      max-width: calc(2 * 100% / 3); /* Limit the width to 2/3 */
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    .get-in-touch {
+      padding: 2rem 1.5rem;
+    }
+    .contact-container {
+      flex-direction: column;
+    }
+    img[alt="Contact Image"] {
+      display: none;
+    }
+    .contact-image {
+      text-align: left;
+    }
+    .contact-image,
+  .contact-form-container {
+    max-width: 100%; 
+    width: 100%;
+  }
+  }
+  </style>
+  <section class="get-in-touch">
+    <div id="contact"></div>
+    <div class="contact-container">
+      <div class="contact-image">
+        <img src="images/emails astronaut 1.png" alt="Contact Image" />
+      </div>
+      <div class="contact-form-container">
+        <div class="section-name">
+          <h3 class="skill-heading"><span>Get in Touch</span> <span class="for-icon"><i class="fa-solid fa-envelopes-bulk animate__animated"></i></span></h3>
+          <img src="images/emails astronaut 1.png" alt="Get in Touch" class="get-in-touch-avatar" />
+        </div>
+        
+        <form class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" name="name" id="name" placeholder="Name" />
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" id="email" placeholder="Email" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <textarea name="message" id="message" placeholder="Message"></textarea>
+            </div>
+          </div>
+          
+          <div style="text-align: right;">
+            <button type="submit">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- Get in Touch *New Component* -->
+
+  <!-- Testimonials *New Component* -->
+  <style>
+    /* Testimonials */
+  .testimonials {
+    padding: 4rem 2rem;
+    background-color: rgba(33, 33, 33, .95);
+  }
+  
+.swiper.mySwiper {
+  padding-bottom: 45px;
+}
+.swiper-slide {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.8);
+}
+.swiper-slide > .bg-img {
+  height: 315px;
+  background-image: url(../images/parchment-bg2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+ .smart-quote {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 25px;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+ }
+ .smart-quote > p.quote {
+  font-family: 'Mynerve', cursive;
+  font-size: 23px;
+  margin-bottom: auto;
+  margin-top: auto;
+  text-align: justify;
+ }
+ .smart-quote > p.author {
+  letter-spacing: 1px;
+  font-style: italic;
+  width: 100%;
+  text-align: right;
+ }
+
+ .swiper-pagination-bullet {
+  background: #c4c4c4 !important; /* color for inactive bullets */
+  opacity: 1; /* make sure the bullets are visible */
+  width: 8px; /* adjust as needed */
+  height: 8px; /* adjust as needed */
+}
+
+.swiper-pagination-bullet-active {
+  background: #ffffff !important; /* color for active bullet */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* adjust shadow as needed */
+}
+
+  @media (max-width: 1100px) {
+    .swiper.mySwiper {
+      margin-left: -31px;
+      margin-right: -31px
+    }
+  }
+
+  @media (max-width: 768px) {
+    .testimonials {
+      padding: 2rem 1.5rem;
+    }
+    .swiper.mySwiper {
+      margin-left: -22px;
+      margin-right: -22px
+    }
+  }
+
+  @media (max-width: 576px) {
+    .swiper.mySwiper {
+      padding-right: 15px;
+    }
+    .first-slide {
+      margin-left: 15px;
+    }
+    .smart-quote {
+      padding: 20px;
+    }
+    .swiper-slide > .bg-img {
+      height: 270px;
+    }
+    .smart-quote > p.quote {
+      font-size: 20px;
+      line-height: 1.4;
+    }
+  }
+
+  </style>
+  <section class="testimonials">
+    
+    <div class="section-name">
+      <h3 class="skill-heading"><span>Codespiration</span> <span class="for-icon"><i class="fa fa-lightbulb-o animate__animated"></i></span></h3>
+      <img src="images/skills astronaut 1.png" alt="Codespiration" class="codespiration" />
+    </div>
+
+    <!-- <div class=""> -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide first-slide">
+            <div class="smart-quote">
+              <p class="quote">"Talk is cheap. Show me the code."</p>
+              <p class="author">Linus Torvalds</p>
+            </div>
+            <div class="bg-img"></div>
+          </div>
+          <div class="swiper-slide">
+            <div class="smart-quote">
+              <p class="quote">"Any fool can write code that a computer can understand. Good programmers write code that humans can understand."</p>
+              <p class="author">Martin Fowler</p>
+            </div>
+            <div class="bg-img"></div>
+          
+          </div>
+          <div class="swiper-slide">
+            <div class="smart-quote">
+              <p class="quote">"The function of good software is to make the complex appear to be simple."</p>
+              <p class="author">Grady Booch</p>
+            </div>
+            <div class="bg-img"></div>
+          </div>
+          <div class="swiper-slide">
+            <div class="smart-quote">
+              <p class="quote">"The best way to predict the future is to invent it."</p>
+              <p class="author">Alan Kay</p>
+            </div>
+            <div class="bg-img"></div>
+          </div>
+          <div class="swiper-slide">
+            <div class="smart-quote">
+              <p class="quote">"A good programmer is someone who always looks both ways before crossing a one-way street."</p>
+              <p class="author">Doug Linder</p>
+            </div>
+            <div class="bg-img"></div>
+          </div>
+          <div class="swiper-slide">
+            <div class="smart-quote">
+              <p class="quote">"The best thing about a boolean is even if you are wrong, you are only off by a bit."</p>
+              <p class="author">Anonymous</p>
+            </div>
+            <div class="bg-img"></div>
+          </div>
+          <div class="swiper-slide">
+            <div class="smart-quote">
+              <p class="quote">"Programs must be written for people to read, and only incidentally for machines to execute."</p>
+              <p class="author">Harold Abelson</p>
+            </div>
+            <div class="bg-img"></div>
+          </div>
+          <div class="swiper-slide">
+            <div class="smart-quote">
+              <p class="quote">"Give a man a program, frustrate him for a day. Teach a man to program, frustrate him for a lifetime."</p>
+              <p class="author">Muhammad Waseem</p>
+            </div>
+            <div class="bg-img"></div>
+          </div>
+          <div class="swiper-slide">
+            <div class="smart-quote">
+              <p class="quote">"Don’t worry if it doesn’t work right. If everything did, you’d be out of a job."</p>
+              <p class="author">Mosher’s Law of Software Engineering</p>
+            </div>
+            <div class="bg-img"></div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    <!-- </div> -->
+    
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script>
+    // swiperJS
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    freeMode: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1.5,
+        spaceBetween: 15
+      },
+      576: {
+        slidesPerView: 2,
+        spaceBetween: 15
+      },
+      768: {
+        slidesPerView: 2.5,
+        spaceBetween: 20
+      },
+      1100: {
+        slidesPerView: 3,
+        spaceBetween: 30
+      }
+    }
+  });
+  </script>
+  <!-- Testimonials *New Component* -->
+
+
+  <!-- footer *New Component* -->
+  <style>
+      /* Footer */
+footer {
+  background-color: #1a1a1a;
+  color: #ccc;
+  padding: 45px 20px 20px;
+}
+
+.footer-container {
+  max-width: 100%;
+  text-align: center;
+}
+
+.footer-social {
+  display: inline-block;
+}
+
+/* Social Icons */
+.social-icons {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+.social-icons li {
+  margin: 0 15px;
+}
+
+.social-icons a {
+  display: inline-block;
+  color: #ccc;
+  text-decoration: none;
+  font-size: 22px; 
+  transition: color 0.2s;
+}
+
+.social-icons a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  margin-top: 1rem;
+  text-align: center;
+}
+.footer-bottom > p {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+  </style>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-social">
+        <ul class="social-icons">
+          <li><a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="https://facebook.com/yourusername" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a></li>
+          <li><a href="https://linkedin.com/in/yourname/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a></li>
+          <li><a href="https://youtube.com/yourusername" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a></li>
+          
+          <li><a href="https://github.com/amukhametyanov" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom mt-5">
+        <p>&copy; 2023 Artur Mukhametyanov. All rights reserved.</p>
+      </div>
+
+
+    </div>
+  </footer>
+  <!-- footer *New Component* -->
+  
+<!-- Swiper JS -->
+
+<!-- Custom JS -->
+<!-- <script src="js/scripts.js"></script> -->
+
+</body>
+</html>

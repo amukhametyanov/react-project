@@ -1,0 +1,320 @@
+/* Skills */
+.skills {
+    padding: 4rem 2rem;
+    /* background-color: #121212; */
+    background-color: rgba(18, 18, 18, .95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* this leaves 65px on top reserved for sticky nav menu, when page uses smooth scroll */
+  
+  #skills, #about-me, #contact {
+    display: block;
+    height: 95px; /* The height of your sticky nav bar */
+    margin-top: -95px; /* The negative value of the height */
+    visibility: hidden;
+  }
+  
+  /* start aimation for section name */
+  @keyframes deformation {
+    0% {
+      transform: scaleX(1);
+    }
+    50% {
+      transform: scaleX(0.7);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
+  
+  
+  .skills-heading {
+    position: static;
+    display: inline-block;
+    overflow: hidden;
+    width: 50%;
+  }
+  
+  .squeeze-animation {
+    display: inline-block;
+    animation: deformation .4s forwards;
+    animation-delay: .4s;
+  }
+  
+  /* end of animation for section title */
+  
+  /* animation for the stroke of the SVG path to make it look like the outline of the circle is growing */
+  @keyframes grow-100 {
+    0% {
+      stroke-dashoffset: 100;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes grow-95 {
+    0% {
+      stroke-dashoffset: 100;
+    }
+    100% {
+      stroke-dashoffset: 5;
+    }
+  }
+  @keyframes grow-90 {
+    0% {
+      stroke-dashoffset: 100;
+    }
+    100% {
+      stroke-dashoffset: 10;
+    }
+  }
+  @keyframes grow-85 {
+    0% {
+      stroke-dashoffset: 100;
+    }
+    100% {
+      stroke-dashoffset: 15;
+    }
+  }
+  @keyframes grow-80 {
+    0% {
+      stroke-dashoffset: 100;
+    }
+    100% {
+      stroke-dashoffset: 20;
+    }
+  }
+  @keyframes grow-75 {
+    0% {
+      stroke-dashoffset: 100;
+    }
+    100% {
+      stroke-dashoffset: 25;
+    }
+  }
+  
+  
+  .circle {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    
+  }
+  .circle-100 {
+    animation: grow-100 2s forwards;
+  }
+  .circle-95 {
+    animation: grow-95 2s forwards;
+  }
+  .circle-90 {
+    animation: grow-90 2s forwards;
+  }
+  .circle-85 {
+    animation: grow-85 2s forwards;
+  }
+  .circle-80 {
+    animation: grow-80 2s forwards;
+  }
+  .circle-75 {
+    animation: grow-75 2s forwards;
+  }
+  /* end of animation for the stroke of the SVG path to make it look like the outline of the circle is growing */
+  
+  
+  .skills h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .skills ul {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      padding: 0;
+      list-style-type: none;
+    }
+    
+    .skills .skill-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+      background-color: #333;
+      border: 1px solid #444;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      height: 100%;
+    }
+  
+  .skills .skill-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+  }
+  
+  .skills .skill-percentage {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #333;
+    overflow: hidden;
+  }
+  
+  
+  
+  .skills .skill-percentage span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+  }
+  
+  .circular-chart {
+      width: 80px;
+      height: 80px;
+    }
+    
+    .circle-bg {
+      opacity: 0.1;
+    }
+    
+    .circle {
+      transition: stroke-dashoffset 0.35s;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+    }
+  
+  
+    /* switching tabs for skills section */
+    .tabs {
+      position: relative;
+      display: flex;
+      /* justify-content: center; */
+      /* border-bottom: 1px solid hsl(0 0% 30%); */
+      width: fit-content;
+      }
+  
+      .tabs::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 4px;
+        scale: var(--_width, 0.333) 1;
+        translate: var(--_left, 0) 0;
+        transform-origin: left;
+        transition: scale 200ms, translate 200ms;
+        background: #fff;
+      }
+     
+      .tab {
+        padding: 1rem 2rem;
+        cursor: pointer;
+        min-width: 0% !important;
+        text-align: center;
+        vertical-align: bottom;
+        font-size: 14px;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+        border: none;
+        /* margin-right: 10px; */
+        color: #a6a6a6;
+        background: transparent;
+        font-family: 'Montserrat', sans-serif;
+      }
+      .tab.active {
+        color: #fff;
+      }
+      
+      .content {
+        border-top: 1px solid hsl(0 0% 30%);
+      }
+      .tab:focus {
+        outline: none !important;
+      }
+      
+      .tabcontent {
+      padding: 20px 0;
+      border-top: none;
+      display: none;
+      }
+      
+      .tabcontent.active {
+      display: block;
+      animation: fadein 0.5s;
+      }
+      
+      
+      @keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+      }
+      
+      /* @media (max-width: 1023.8px) {
+        .tabs,
+        .content {
+            margin: 0 -20px;
+        }
+      } */
+      @media (min-width: 576px) {
+        .skills .skill-name {
+          margin-right: 10px;
+          font-size: 14px;
+          flex: 1;
+        }
+        
+      }
+      @media (max-width: 576px) {
+        .tabs .tab {
+            min-width: 95px;
+            font-size: 12px;
+        }
+        .tab {
+          padding: 15px;
+        }
+        
+        .tabs > p {
+            font-size: 10px;
+        }
+        .skills .skill-name {
+          text-align: center;
+          margin-bottom: 10px;
+        }
+      }
+  
+  
+    /* glowing effect around cards */
+    .skills li {
+      position: relative;
+      z-index: 1;
+      /* animation: glowing 2s infinite; */
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.6), 0 0 10px rgba(255, 0, 255, 0.6);
+    }
+  
+  
+     /* Media Queries for skills */
+     @media (max-width: 1024px) {
+      .skills ul {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .skills {
+        padding: 2rem 1.5rem;
+      }
+      .skills ul {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 576px) {
+      .skills .skill-card {
+          flex-direction: column;
+      }
+    }

@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { useAnimateCategoryNamesOnScroll } from './components/useAnimateCategoryNamesOnScroll';  
+import Navigation from './components/Navigation';  // Import the Navigation component
+import Hero from './components/Hero';  // Import the Hero component
+import Skills from './components/Skills'; // Import the Skills component
+import About from './components/About'; // Import the About component
+import ContactUs from './components/ContactUs'; // Import the ContactUs component
+import Codespiration from './components/Codespiration'; // Import the About component
+import Footer from './components/Footer'; // Import the About component
+import './App.css';  
 
 function App() {
+  
+  useAnimateCategoryNamesOnScroll();  // Use the custom hook
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navigation />  {/* Include the Navigation component */}
+      <Hero />  {/* Use the Hero component */}
+      <Skills /> {/* Include the Skills component here */}
+      <About />
+      <ContactUs />
+      <Codespiration />
+      <Footer />
     </div>
   );
 }

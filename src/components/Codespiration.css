@@ -1,0 +1,90 @@
+ /* codespiration */
+ .codespiration {
+    padding: 4rem 2rem;
+    background-color: rgba(33, 33, 33, .95);
+  }
+  
+.swiper.mySwiper {
+  padding-bottom: 45px;
+}
+.swiper-slide {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.8);
+}
+.swiper-slide > .bg-img {
+  height: 315px;
+  background-image: url('../images/parchment-bg2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+ .smart-quote {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 25px;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+ }
+ .smart-quote > p.quote {
+  font-family: 'Mynerve', cursive;
+  font-size: 23px;
+  margin-bottom: auto;
+  margin-top: auto;
+  text-align: justify;
+ }
+ .smart-quote > p.author {
+  letter-spacing: 1px;
+  font-style: italic;
+  width: 100%;
+  text-align: right;
+ }
+
+ .swiper-pagination-bullet {
+  background: #c4c4c4 !important; /* color for inactive bullets */
+  opacity: 1; /* make sure the bullets are visible */
+  width: 8px; /* adjust as needed */
+  height: 8px; /* adjust as needed */
+}
+
+.swiper-pagination-bullet-active {
+  background: #ffffff !important; /* color for active bullet */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* adjust shadow as needed */
+}
+
+  @media (max-width: 1100px) {
+    .swiper.mySwiper {
+      margin-left: -31px;
+      margin-right: -31px
+    }
+  }
+
+  @media (max-width: 768px) {
+    .codespiration {
+      padding: 2rem 1.5rem;
+    }
+    .swiper.mySwiper {
+      margin-left: -22px;
+      margin-right: -22px
+    }
+  }
+
+  @media (max-width: 576px) {
+    .swiper.mySwiper {
+      padding-right: 15px;
+    }
+    .first-slide {
+      margin-left: 15px;
+    }
+    .smart-quote {
+      padding: 20px;
+    }
+    .swiper-slide > .bg-img {
+      height: 270px;
+    }
+    .smart-quote > p.quote {
+      font-size: 20px;
+      line-height: 1.4;
+    }
+  }

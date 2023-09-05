@@ -1,0 +1,126 @@
+/* About section */
+.about {
+    padding: 8rem 2rem;
+    background: linear-gradient(rgba(30,144,255,0.9), rgba(138,43,226,.7));
+  }
+  
+  .about-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+  }
+  
+  .photo-container {
+    flex: 0 0 auto;
+    width: 150px;
+    height: 150px;
+    margin-right: 30px;
+  }
+  
+  .profile-photo {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4), 0 3px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 50%;
+  }
+  
+  .comic-cloud {
+    flex: 1;
+    background-color: #262626;
+  border-radius: 10px;
+  position: relative;
+  /* font-style: italic; */
+  }
+  .comic-cloud::before {
+    content: '';
+    position: absolute;
+    bottom: -24px;
+    left: 6px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 31px solid #262626;
+    transform: rotate(24deg);
+  }
+
+  .aligned-image {
+    width: 110px;
+    height: auto;
+    position: absolute;
+    left: -30px;
+    bottom: -120px;
+    transform: scaleX(-1);
+  }
+
+  
+  .about-text {
+    
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .about-text h2 {
+    font-family: 'Graduate', cursive;
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid;
+  }
+
+  .about-text p {
+    letter-spacing: 1.2px;
+    text-indent: 1em;
+  }
+ 
+
+  /* animation for austronauft */
+  @keyframes levitate-and-flip {
+    0% {
+      transform: translateY(0) scaleX(-1);
+    }
+    25% {
+      transform: translateY(10px) scaleX(-1); 
+    }
+    50% {
+      transform: translateY(0) scaleX(-1);
+    }
+    75% {
+      transform: translateY(15px) scaleX(-1); 
+    }
+    100% {
+      transform: translateY(0) scaleX(-1);
+    }
+  }
+  
+  .aligned-image {
+    animation: levitate-and-flip 3s infinite ease-in-out;
+  }
+  
+  /* Responsive Design */
+  @media (min-width: 768px) {
+    .comic-cloud {
+      padding: 40px;
+    }
+  }
+  @media (max-width: 767px) {
+    .about {
+      padding: 6rem 1.5rem;
+    }
+    .comic-cloud {
+      padding: 20px;
+    }
+  }
+  @media (max-width: 576px) {
+    .photo-container {
+      margin: 0 auto 30px;
+    }
+  
+    .about-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    .about-text p {
+      font-size: .85rem;
+    }
+  }
