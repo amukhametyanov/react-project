@@ -8,6 +8,10 @@
     background-color: rgba(28, 28, 28, .9);
     color: #ccc;
   }
+
+  .get-in-touch .for-icon {
+    margin-left: 5px;
+  }
   
   .contact-container {
     display: flex;
@@ -92,7 +96,7 @@
     min-width: 145px;
   }
   
-  .contact-form button:hover {
+  .contact-form button:not([disabled]):hover {
     background-color: #444;
   }
 
@@ -130,3 +134,52 @@
         width: 100%;
     }
   }
+
+
+  /* modal */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-container {
+    position: relative;
+    background-color: #262626;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+}
+
+
+.modal-title {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+
+.modal-icon {
+    margin-left: 10px;
+}
+
+.fade-out-modal {
+  animation: fadeOut ease 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
