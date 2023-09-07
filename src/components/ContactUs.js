@@ -80,7 +80,7 @@ const ContactUs = () => {
             <div id="contact"></div>
             <div className="contact-container">
                 <div className="contact-image">
-                    <img src={astronautEmailImage} alt="Contact Image" />
+                    <img src={astronautEmailImage} alt="Contact Image" width="370" height="370" />
                 </div>
                 <div className="contact-form-container">
                     <div className="section-name">
@@ -90,7 +90,7 @@ const ContactUs = () => {
                                 <i className="fa-solid fa-envelopes-bulk animate__animated"></i>
                             </span>
                         </h3>
-                        <img src={astronautEmailImage} alt="Get in Touch" className="get-in-touch-avatar" />
+                        <img src={astronautEmailImage} alt="Get in Touch" className="get-in-touch-avatar" width="100" height="100" />
                     </div>
                     
                     <form className="contact-form">

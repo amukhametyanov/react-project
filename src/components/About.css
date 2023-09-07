@@ -72,6 +72,11 @@
     letter-spacing: 1.2px;
     text-indent: 1em;
   }
+
+  .keyword {
+    color: #ffc107;
+  }
+  
  
 
   /* animation for austronauft */

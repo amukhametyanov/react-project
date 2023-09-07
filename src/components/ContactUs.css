@@ -28,6 +28,7 @@
   .contact-image > img {
     width: 100%;
     max-width: 370px;
+    height: auto;
     margin-right: 20px;
   }
   
@@ -98,6 +99,10 @@
   
   .contact-form button:not([disabled]):hover {
     background-color: #444;
+  }
+
+  .contact-form button[disabled] {
+    cursor: not-allowed;
   }
 
   @media (min-width: 768px) {

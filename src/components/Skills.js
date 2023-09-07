@@ -70,13 +70,13 @@ const Skills = () => {
             <h3 className="skills-heading">
             <span>Skills</span> <span className="for-icon"><i className="fa-sharp fa-solid fa-screwdriver-wrench animate__animated"></i></span>
             </h3>
-            <img src={devSkillsImage} alt="Dev Skills" className="skills-avatar" />
+            <img src={devSkillsImage} alt="Dev Skills" className="skills-avatar" height="100" width="100" />
         </div>
 
         <div className="tabs flex-wrap" ref={tabsContainer}>
             <button className={`tab ${activeTab === 0 ? 'active' : ''}`} onClick={(e) => changeTab(0, e.currentTarget)}>Front-End</button>
             <button className={`tab ${activeTab === 1 ? 'active' : ''}`} onClick={(e) => changeTab(1, e.currentTarget)}>Back-End</button>
-            <button className={`tab ${activeTab === 2 ? 'active' : ''}`} onClick={(e) => changeTab(2, e.currentTarget)}>Full-Stack</button>
+            <button className={`tab ${activeTab === 2 ? 'active' : ''}`} onClick={(e) => changeTab(2, e.currentTarget)}>Software</button>
         </div>
 
         <div className="content">

@@ -9,25 +9,31 @@ const AboutMe = () => {
       <div id="about-me"></div>
       <div className="about-container">
         <div className="photo-container">
-          <img src={profilePhoto} alt="Dev Photo" className="profile-photo" />
+          <img src={profilePhoto} alt="Dev Photo" className="profile-photo" width="150" height="150" />
         </div>
         <div className="comic-cloud">
           <div className="about-text">
             <h2>About Me <i className="fa-sharp fa-solid fa-comment-dots"></i></h2>
-            <p>Hello and welcome to my digital abode! Now, you might be asking yourself, "Who is this coding maestro?" Well, sit tight, because you're in for a ride through the riveting world of web development, as narrated by yours truly.</p>
+            <p>Welcome to the home of the web's next superhero, minus the cape but with plenty of bytes! Ready to dive into the labyrinth of <span className="keyword">loops</span>, <span className="keyword">conditions</span>, and <span className="keyword">semicolons</span>? Well, you're in for a treat.</p>
             <br />
-            <p>First off, let's clear something up: I speak more languages than just English. I'm fluent in HTML, CSS, JavaScript, and even PHP, Python, Angular, and React. That's right, I'm the polyglot of programming, the Shakespeare of script, the — okay, I'll stop there.</p>
+            <p>First thing's first, I'm a language savant—no, not the Rosetta Stone type. I juggle <span className="keyword">JavaScript</span>, <span className="keyword">PHP</span>, <span className="keyword">Python</span>, <span className="keyword">Angular</span>, and <span className="keyword">React</span> like a circus performer, all while styling in <span className="keyword">HTML</span>, <span className="keyword">CSS</span>, and <span className="keyword">SASS</span>. I've also dabbled in <span className="keyword">Java Spring</span>, and I'm no stranger to database management with <span className="keyword">Oracle</span>, <span className="keyword">MySQL</span>, and <span className="keyword">PL/SQL</span>. I'm the Leonardo da Vinci of the web canvas, but with better hair!</p>
             <br />
-            <p>You know how some people optimize their coffee intake for maximum productivity? Well, I optimize websites. I've compressed more images than you've taken selfies, and let's just say lazy loading isn't just my Sunday morning routine. My coding finesse has even boosted sales by 15% for my current gig. Not too shabby, right?</p>
+            <p>Now, let's talk <span className="keyword">optimization</span>. I've squeezed the life out of more <span className="keyword">images</span> than a juicer on a health kick. <span className="keyword">Lazy loading</span>? It's more like my lifestyle than just a coding technique. I've even mastered <span className="keyword">SEO</span> to the point where Google might as well send me a Christmas card. And I don't mean to brag, but I've spiked <span className="keyword">sales</span> by a cool 15% with my coding tricks at <span className="keyword">Sporting Life</span>. Take that, Wall Street!</p>
             <br />
-            <p>But hold on, there's more! Ever tried navigating a website that's about as accessible as a labyrinth guarded by a Minotaur? Not on my watch. I'm all about making the web a friendlier place, one alt-text at a time. And SEO? Let's just say if Google were a classroom, my websites would be the teacher's pets.</p>
+            <p>But wait, there's more! At <span className="keyword">daVinci Retail</span>, I was all about crafting the perfect user experience. I single-handedly improved website accessibility, turning intricate mazes into pleasant strolls in the digital park. If you've ever been lost in a website, you'll appreciate my <span className="keyword">alt-texts</span> and intuitive designs.</p>
             <br />
-            <p>When I'm not busy being a remote warrior—mastering the art of coding in pajamas—I dabble in the fine arts of project management. Asana, Jira, Slack; you name it, I've "task-managed" it. Oh, did I mention that I thrive in Agile environments? Yep, I'm all about those sprints, and not just when I'm late for a meeting!</p>
+            <p>As for my time at <span className="keyword">CallCN</span>, I was the one-man army behind both the frontend and backend. I created RESTful APIs that were so smooth, they made butter look chunky. My prowess with <span className="keyword">PHPAuth</span> made our web platforms as secure as Fort Knox.</p>
             <br />
-            <p>So, buckle up, surf through my portfolio, or drop me a line. Let's turn those dream projects into digital realities, one line of code at a time!</p>
+            <p>When I joined the team at <span className="keyword">Sporting Life</span>, I didn't just join; I revolutionized. I brought in <span className="keyword">Figma</span> as the primary design tool, elevating our version control game and facilitating real-time collaboration like never before. I was the maestro, conducting an orchestra of codes, databases, and user interfaces.</p>
+            <br />
+            <p>On the education front, I honed my skills at <span className="keyword">Seneca College of Applied Arts And Technology</span> in Toronto. Imagine Hogwarts, but instead of spells, we had <span className="keyword">algorithms</span> and <span className="keyword">Git</span>. I further expanded my horizons at the <span className="keyword">Ufa State Aviation Technical University</span> in Russia, diving deep into the intricacies of <span className="keyword">Computer Science</span>. I even picked up a bit of <span className="keyword">C</span>, <span className="keyword">C++</span>, and <span className="keyword">C#</span> along the way.</p>
+            <br />
+            <p>So, are you ready for a journey through my digital universe? Grab your mouse and keyboard, and let's make those dream projects a reality—one semicolon at a time!</p>
+
+
 
           </div>
-          <img src={floatingAstronauftImage} alt="Your Image Description" className="aligned-image" />
+          <img src={floatingAstronauftImage} alt="Your Image Description" className="aligned-image" width="110" height="110" />
         </div>
       </div>
     </section>

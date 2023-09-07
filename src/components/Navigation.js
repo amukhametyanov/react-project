@@ -70,10 +70,10 @@ const Navigation = () => {
   return (
     <header className="sticky-header">
       <nav className="top-nav">
-        <img src={logo} alt="Logo" />
+        <img src={logo} alt="Logo" title="Logo" height="32" width="32" />
         <div className="desktop-menu">
             <ul>
-                <li><a href="/">Resume</a></li>
+                {/* <li><a href="/">Resume</a></li> */}
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#about-me">About</a></li>
                 <li><a href="#contact">Contact</a></li>

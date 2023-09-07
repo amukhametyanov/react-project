@@ -95,7 +95,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px 5px 0 5px;
+    padding: 10px 5px 10px 5px;
     width: 100%;
     background-image: linear-gradient(to top, #121212, transparent);
   }
@@ -114,12 +114,40 @@
   
   .learn-more-link:hover {
     color: #ccc;
+    
   }
   
   .fa-chevron-down {
     opacity: .7;
-    margin-top: 5px;
+    margin-bottom: 5px;
   }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    10% {
+      transform: translateY(-20px);
+    }
+    20% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-10px);
+    }
+    40% {
+      transform: translateY(0);
+    }
+    40%, 100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .learn-more-link .fas.fa-chevron-down {
+    animation: bounce 2s infinite;
+  }
+  
+  
 
   /* media queries for header */
   @media (max-width: 576px) {
