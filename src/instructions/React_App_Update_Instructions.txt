@@ -10,6 +10,10 @@
     or
     ```
     yarn start
+
+2.5 Build the project
+
+npm run build
     ```
 
 3. Commit Changes
@@ -18,6 +22,10 @@
     git add .
     git commit -m "Description of changes made"
     ```
+
+3.5 Check what branch you are in:
+	
+    git branch
 
 4. Push to Main Branch (or whichever branch you are working on)
     - Push these changes to the main branch (or whatever branch you are using for development) of your GitHub repository.
