@@ -151,6 +151,9 @@
 
   /* media queries for header */
   @media (max-width: 576px) {
+    .hero {
+      height: calc(100vh - 65px - env(safe-area-inset-bottom));
+    }
     .hero h1 {
         font-size: 2.7rem;
       }
