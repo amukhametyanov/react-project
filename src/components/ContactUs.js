@@ -84,7 +84,7 @@ const ContactUs = () => {
                 </div>
                 <div className="contact-form-container">
                     <div className="section-name">
-                        <h3 className="skill-heading">
+                        <h3 className="skills-heading">
                             <span>Get in Touch</span>
                             <span className="for-icon">
                                 <i className="fa-solid fa-envelopes-bulk animate__animated"></i>

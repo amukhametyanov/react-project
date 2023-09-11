@@ -43,7 +43,7 @@ const Codespiration = () => {
     <section className="codespiration">
     
             <div className="section-name">
-            <h3 className="skill-heading"><span>Codespiration</span> <span className="for-icon"><i className="fa fa-lightbulb-o animate__animated"></i></span></h3>
+            <h3 className="skills-heading"><span>Codespiration</span> <span className="for-icon"><i className="fa fa-lightbulb-o animate__animated"></i></span></h3>
             <img src={codespirationAstronauft} alt="Codespiration" className="codespirationCoffee" height="100" width="100" />
             </div>
 

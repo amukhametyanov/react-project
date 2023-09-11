@@ -14,7 +14,7 @@ const AboutMe = () => {
         <div className="comic-cloud">
           <div className="about-text">
             <h2>About Me <i className="fa-sharp fa-solid fa-comment-dots"></i></h2>
-            <p>Welcome to the home of the web's next superhero, minus the cape but with plenty of bytes! Ready to dive into the labyrinth of <span className="keyword">loops</span>, <span className="keyword">conditions</span>, and <span className="keyword">semicolons</span>? Well, you're in for a treat.</p>
+            <p>Welcome to the home of the web's next superhero, minus the cape but with plenty of bytes! Ready to dive into the labyrinth of loops, conditions, and semicolons? Well, you're in for a treat.</p>
             <br />
             <p>First thing's first, I'm a language savant—no, not the Rosetta Stone type. I juggle <span className="keyword">JavaScript</span>, <span className="keyword">PHP</span>, <span className="keyword">Python</span>, <span className="keyword">Angular</span>, and <span className="keyword">React</span> like a circus performer, all while styling in <span className="keyword">HTML</span>, <span className="keyword">CSS</span>, and <span className="keyword">SASS</span>. I've also dabbled in <span className="keyword">Java Spring</span>, and I'm no stranger to database management with <span className="keyword">Oracle</span>, <span className="keyword">MySQL</span>, and <span className="keyword">PL/SQL</span>. I'm the Leonardo da Vinci of the web canvas, but with better hair!</p>
             <br />

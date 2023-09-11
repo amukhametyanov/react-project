@@ -30,7 +30,7 @@ npm run build
 4. Push to Main Branch (or whichever branch you are working on)
     - Push these changes to the main branch (or whatever branch you are using for development) of your GitHub repository.
     ```
-    git push origin main
+    git push origin master
     ```
 
 5. Deploy to GitHub Pages
